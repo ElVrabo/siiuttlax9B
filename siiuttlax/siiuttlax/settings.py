@@ -1,6 +1,6 @@
 """
-Author: Fatima Rojas Salamanca
-Github: 
+Author: Francisco López Briones y Equipo 9A IDGS
+Github: @franlop24
 Project: siiuttlax
 File: settings.py
 Description: Configuraciones de Proyecto SIIUTTlax
@@ -32,9 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.home.apps.HomeConfig',
+    'apps.period.apps.PeriodConfig',
     'apps.career.apps.CareerConfig',
     'apps.academy.apps.AcademyConfig',
-    
+  
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,13 +80,17 @@ WSGI_APPLICATION = 'siiuttlax.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': str(os.getenv('DB_NAME')),
+    #     'USER': str(os.getenv('DB_USER')),
+    #     'PASSWORD': str(os.getenv('DB_PASSWORD')),
+    #     'HOST': str(os.getenv('DB_HOST')),
+    #     'PORT': str(os.getenv('DB_PORT')),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DB_USER')),
-        'PASSWORD': str(os.getenv('DB_PASSWORD')),
-        'HOST': str(os.getenv('DB_HOST')),
-        'PORT': str(os.getenv('DB_PORT')),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
